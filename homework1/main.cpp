@@ -18,7 +18,7 @@ int main() {
     double max_left = 0, max_right = 0, X_leftmost = 0, Y_leftmost = 0, X_rightmost = 0, Y_rightmost = 0;
     int n = 0;
     std::ifstream F;
-    F.open(R"in.txt");
+    F.open(R"(C:\Users\Thomas_Maddison\CLionProjects\Polytech\in.txt)");
     if (F) {
         F >> x_start;
         F >> y_start;
