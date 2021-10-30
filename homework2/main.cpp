@@ -6,7 +6,7 @@
 int main() {
     double x_0 = 0, y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     int size = 0;
-    std::ifstream in(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
+    std::ifstream in(R"(in.txt)");
     auto *TMP = new double;
     auto *X = new double;
     auto *Y = new double;
