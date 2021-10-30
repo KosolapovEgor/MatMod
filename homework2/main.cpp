@@ -7,7 +7,6 @@ int main() {
     double x_0 = 0, y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     int size = 0;
     std::ifstream in(R"(in.txt)");
-    auto *TMP = new double;
     auto *X = new double;
     auto *Y = new double;
     if (in.is_open()){
@@ -64,5 +63,7 @@ int main() {
         }
 
     }
+    delete X;
+    delete Y;
     std::cout << answer << std::endl;
 }
