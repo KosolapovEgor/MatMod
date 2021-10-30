@@ -4,4 +4,5 @@ project(Polytech)
 set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(homework1)
+add_subdirectory(homework2)
 
