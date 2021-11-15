@@ -6,17 +6,35 @@
 int main() {
     double x_0 = 0, y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     int size = 0;
+    int n = 1;
+    std::ifstream in_prev(R"(in.txt)");
+    if (in_prev.is_open()){
+        in_prev >> y_0;
+        in_prev >> v_x;
+        in_prev >> v_y;
+        while ((!in_prev.eof())) {
+            in_prev >> v_x;
+            in_prev >> v_y;
+            n++;
+        }
+    }
+    in_prev.close();
+
+    auto*X = new double[n];
+    auto*Y = new double[n];
+
     std::ifstream in(R"(in.txt)");
-    auto *X = new double;
-    auto *Y = new double;
     if (in.is_open()){
         in >> y_0;
         in >> v_x;
         in >> v_y;
+        double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
         int i = 0;
-        while (!in.eof()) {
+
+        while ((!in.eof()) && (X[i - 1] <= v_x*t_end + y_0)) {
             in >> X[i];
             in >> Y[i];
+            n++;
             i++;
             size++;
         }
@@ -63,7 +81,7 @@ int main() {
         }
 
     }
-    delete X;
-    delete Y;
+    delete[] X;
+    delete[] Y;
     std::cout << answer << std::endl;
 }
