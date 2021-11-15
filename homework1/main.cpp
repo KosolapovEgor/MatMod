@@ -14,25 +14,25 @@ double distance(double x, double y, double x_0, double y_0){
 
 
 int main() {
-    double x_start, y_start, X, Y;
+    double x_start, y_start, X, Y, tolerance = 1e-6;
     double max_left = 0, max_right = 0, X_leftmost = 0, Y_leftmost = 0, X_rightmost = 0, Y_rightmost = 0;
     int n = 0;
     std::ifstream F;
-    F.open(R"(in.txt)");
+    F.open(R"(C:\Users\Thomas_Maddison\CLionProjects\Polytech\in.txt)");
     if (F) {
         F >> x_start;
         F >> y_start;
             while (!F.eof()) {
                 F >> X;
                 F >> Y;
-
-                if (((dot_product(X, Y, -y_start, x_start)) >= 0) && (distance(X, Y, x_start, y_start) >= max_left)) {
+                double distance_check = distance(X,Y,x_start,y_start);
+                if (((dot_product(X, Y, -y_start, x_start)) >= 0) && (distance_check >= max_left - tolerance)) {
                     max_left = distance(X, Y, x_start, y_start);
                     X_leftmost = X;
                     Y_leftmost = Y;
                 }
 
-                if (((dot_product(X, Y, -y_start, x_start)) < 0) && (distance(X, Y, x_start, y_start) >= max_right)) {
+                if (((dot_product(X, Y, -y_start, x_start)) < 0) && (distance_check >= max_right - tolerance)) {
                     max_right = distance(X, Y, x_start, y_start);
                     X_rightmost = X;
                     Y_rightmost = Y;
