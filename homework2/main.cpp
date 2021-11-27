@@ -58,7 +58,7 @@ int main() {
                 if (g * t_collision * t_collision / 2 + A_y * t_collision + B_y <= Y[i]) {
                     A_x = -A_x;
                     B_x = 2 * A_x * t_collision + B_x;
-                    direction = -1 * direction;
+                    direction = (-1) * direction;
                 }
             }
             if (t_collision >= t_end) {
