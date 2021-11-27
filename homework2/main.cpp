@@ -72,11 +72,11 @@ int main() {
             break;
         }
         if (coordinate_final >= X[size - 1]){
-            answer = size - 1;
+            answer = size;
             break;
         }
         if (coordinate_final >= X[i] && coordinate_final <= X[i + 1]){
-            answer = i - 1;
+            answer = i;
             break;
         }
 
