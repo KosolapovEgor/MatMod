@@ -39,7 +39,7 @@ int main() {
                 }
                 n++;
             }
-            std::cout << "Leftmost:" << " " << X_leftmost << " " << Y_leftmost << std::endl;
-            std::cout << "Rightmost:" << " " << X_rightmost << " " << Y_rightmost << std::endl;
+            std::cout << "Leftmost: " << X_leftmost << " " << Y_leftmost << std::endl;
+            std::cout << "Rightmost: "  << X_rightmost << " " << Y_rightmost << std::endl;
     }
 }
