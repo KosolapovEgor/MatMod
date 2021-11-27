@@ -6,7 +6,7 @@
 int main() {
     double x_0 = 0, y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     int size = 0, check, tmp;
-    int n = 1;
+    int n = 0;
     std::ifstream in_prev(R"(in.txt)");
     if (in_prev.is_open()){
         in_prev >> y_0;
