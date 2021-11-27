@@ -26,13 +26,13 @@ int main() {
                 F >> X;
                 F >> Y;
                 double distance_check = distance(X,Y,x_start,y_start);
-                if (((dot_product(X, Y, -y_start, x_start)) >= 0) && (distance_check >= max_left - tolerance)) {
+                if (((dot_product(X, Y, -y_start, x_start)) > 0) && (distance_check >= max_left - tolerance)) {
                     max_left = distance(X, Y, x_start, y_start);
                     X_leftmost = X;
                     Y_leftmost = Y;
                 }
 
-                if (((dot_product(X, Y, -y_start, x_start)) < 0) && (distance_check >= max_right - tolerance)) {
+                if (((dot_product(X, Y, -y_start, x_start)) <= 0) && (distance_check >= max_right - tolerance)) {
                     max_right = distance(X, Y, x_start, y_start);
                     X_rightmost = X;
                     Y_rightmost = Y;
