@@ -18,7 +18,7 @@ int main() {
     double max_left = 0, max_right = 0, X_leftmost = 0, Y_leftmost = 0, X_rightmost = 0, Y_rightmost = 0;
     int n = 0;
     std::ifstream F;
-    F.open(R"(in.txt)");
+    F.open("in.txt");
     if (F) {
         F >> x_start;
         F >> y_start;
@@ -39,7 +39,7 @@ int main() {
                 }
                 n++;
             }
-            std::cout << "Leftmost" << " " << X_leftmost << " " << Y_leftmost << std::endl;
-            std::cout << "Rightmost" << " " << X_rightmost << " " << Y_rightmost << std::endl;
+            std::cout << "Leftmost:" << " " << X_leftmost << " " << Y_leftmost << std::endl;
+            std::cout << "Rightmost:" << " " << X_rightmost << " " << Y_rightmost << std::endl;
     }
 }
