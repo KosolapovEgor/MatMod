@@ -35,7 +35,6 @@ int main() {
         while ((!in.eof()) && (X[i - 1] <= v_x*t_end + y_0)) {
             in >> X[i];
             in >> Y[i];
-            n++;
             i++;
             size++;
         }
@@ -73,11 +72,11 @@ int main() {
             break;
         }
         if (coordinate_final >= X[size - 1]){
-            answer = size + 1;
+            answer = size;
             break;
         }
         if (coordinate_final >= X[i] && coordinate_final <= X[i + 1]){
-            answer = i + 1;
+            answer = i;
             break;
         }
 
