@@ -48,7 +48,7 @@ int main() {
         if (i == size - 1){
             coordinate_final = A_x*t_end + B_x;
         }
-        if (i == 0){
+        if ((i == 0) && (direction == -1)){
             coordinate_final = A_x*t_end + B_x;
         }
         if (i != size - 1 && i != 0) {
