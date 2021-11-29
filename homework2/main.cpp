@@ -4,18 +4,11 @@
 
 
 int main(int argc, char** argv) {
-    if(argc == 2){
-        // есть один агрумент
-        // в argv[1] содержится строка с первым агрументом (имя файла)
-        std::cout << "1st argument: "<< argv[1] << std::endl;
-    }else{
-        // аргументов нет или их больше чем мы ожидаем
-    }
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
     int n = 0;
-    std::ifstream in_prev(argc[1]);
+    std::ifstream in_prev("in.txt");
     if (in_prev.is_open()){
         in_prev >> y_0;
         in_prev >> v_x;
@@ -32,7 +25,7 @@ int main(int argc, char** argv) {
     auto*X = new double[n];
     auto*Y = new double[n];
 
-    std::ifstream in(argc[1]);
+    std::ifstream in("in.txt");
     if (in.is_open()){
         in >> y_0;
         in >> v_x;
