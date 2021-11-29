@@ -57,7 +57,6 @@ int main(int argc, char** argv) {
     }
 
     double coordinate_final = A_x*t_end + B_x;
-    std::cout << coordinate_final << std::endl;
 
     for (int i = 0; i <= n - 1; i++){
         if ((coordinate_final > X[i]) && (coordinate_final < X[i + 1])){
