@@ -62,7 +62,7 @@ int main(int argc, char** argv) {
         }else if((coordinate_final == X[i]) && direction == 1){
             answer = i;
         }else if((coordinate_final == X[i]) && direction == -1){
-            answer = i + 1;
+            answer = i + 100;
         }else if (coordinate_final < X[0]){
             answer = 0;
         }else if (coordinate_final > X[n - 1]){
