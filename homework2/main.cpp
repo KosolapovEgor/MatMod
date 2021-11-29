@@ -4,8 +4,6 @@
 
 
 int main(int argc, char** argv) {
-    if (argc != 2) {std::cout << "There aren't any arguments or there are more arguments than we expect."; }
-    else{
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
@@ -59,18 +57,22 @@ int main(int argc, char** argv) {
 
     double coordinate_final = A_x*t_end + B_x;
 
-    for (int i = 0; i <= n - 1; i++){
+    for (int i = 0; i <= n - 2; i++){
         if ((coordinate_final >= X[i]) && (coordinate_final <= X[i + 1])){
             answer = i + 1;
-        }else if (coordinate_final < X[0]){
-            answer = 0;
-        }else if (coordinate_final > X[n - 1]){
-            answer = n;
+            break;
         }
+    }
+
+    if (coordinate_final > X[n - 1]){
+        answer = n;
+    }
+
+    if (coordinate_final < X[0]){
+        answer = 0;
     }
 
     delete[] X;
     delete[] Y;
     std::cout << answer << std::endl;
-}
 }
