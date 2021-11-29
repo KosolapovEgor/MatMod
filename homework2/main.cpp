@@ -8,6 +8,7 @@ int main(int argc, char** argv) {
     double check, tmp, t_collision;
     int direction = 1;
     int n = 10000;
+    int size = 0;
 
     auto*X = new double[n];
     auto*Y = new double[n];
@@ -23,6 +24,7 @@ int main(int argc, char** argv) {
             in >> X[i];
             in >> Y[i];
             i++;
+            size++;
         }
     }
     in.close();
@@ -45,15 +47,15 @@ int main(int argc, char** argv) {
 
     double coordinate_final = A_x*t_end + B_x;
 
-    for (int i = 0; i <= n - 2; i++){
+    for (int i = 0; i <= size - 2; i++){
         if ((coordinate_final >= X[i]) && (coordinate_final <= X[i + 1])){
             answer = i + 1;
             break;
         }
     }
 
-    if (coordinate_final > X[n - 1]){
-        answer = n;
+    if (coordinate_final > X[size - 1]){
+        answer = size;
     }
 
     if (coordinate_final < X[0]){
