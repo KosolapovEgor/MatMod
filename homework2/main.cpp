@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
     for (int i = 0; (i >= 0) && (i <= n - 1); i = i + direction){
         t_collision = (X[i] - B_x)/A_x;
         if (t_collision <= t_end) {
-            if ((-g * t_collision * t_collision / 2 + A_y * t_collision + B_y) < Y[i]) {
+            if ((-g * t_collision * t_collision / 2 + A_y * t_collision + B_y) <= Y[i] + 1e-6) {
                 B_x = 2*A_x*t_collision + B_x;
                 A_x = -A_x;
                 direction = (-1)*direction;
