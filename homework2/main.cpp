@@ -4,8 +4,14 @@
 
 
 int main(int argc, char** argv) {
-    if (argc != 2) { std::cout << "There aren't any arguments or there are more arguments than we expect."; }
-    else{
+    if(argc == 2){
+        // есть один агрумент
+        // в argv[1] содержится строка с первым агрументом (имя файла)
+        std::cout << "1st argument: "<< argv[1] << std::endl;
+    }else{
+        // аргументов нет или их больше чем мы ожидаем
+    }
+
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
