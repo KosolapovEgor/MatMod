@@ -9,21 +9,20 @@ int main(int argc, char** argv) {
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double t_collision;
     int direction = 1;
-    int n = 1000000;
-    int size = 0;
-    //std::ifstream in_prev(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
-    //if (in_prev.is_open()){
-        //in_prev >> y_0;
-        //in_prev >> v_x;
-        //in_prev >> v_y;
-        //double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
-        //while ((!in_prev.eof()) && (check <= v_x*t_end)) {
-            //in_prev >> check;
-            //in_prev >> tmp;
-            //n++;
-        //}
-    //}
-    //in_prev.close();
+    int n = 0;
+    std::ifstream in_prev(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
+    if (in_prev.is_open()){
+        in_prev >> y_0;
+        in_prev >> v_x;
+        in_prev >> v_y;
+        double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
+        while ((!in_prev.eof()) && (check <= v_x*t_end)) {
+            in_prev >> check;
+            in_prev >> tmp;
+            n++;
+        }
+    }
+    in_prev.close();
 
     auto*X = new double[n];
     auto*Y = new double[n];
@@ -39,7 +38,6 @@ int main(int argc, char** argv) {
             in >> X[i];
             in >> Y[i];
             i++;
-            size++;
         }
     }
     in.close();
@@ -60,21 +58,19 @@ int main(int argc, char** argv) {
 
     double coordinate_final = A_x*t_end + B_x;
 
-    for (int i = 0; i <= size - 1; i++){
+    for (int i = 0; i <= n - 1; i++){
         if ((coordinate_final >= X[i]) && (coordinate_final <= X[i + 1])){
             answer = i + 1;
         }else if (coordinate_final <= X[0]){
             answer = 0;
-        }else if (coordinate_final >= X[size - 1]){
-            answer = size;
+        }else if (coordinate_final >= X[n - 1]){
+            answer = n;
         }
     }
 
     delete[] X;
     delete[] Y;
-    if (argv[1] == "4.txt"){
-        answer = 0;
-    }
+        
     std::cout << answer << std::endl;
 
 }
