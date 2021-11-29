@@ -4,6 +4,7 @@
 
 
 int main(int argc, char** argv) {
+
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
@@ -21,7 +22,7 @@ int main(int argc, char** argv) {
         }
     }
     in_prev.close();
-
+    std::cout << n << std::endl;
     auto*X = new double[n];
     auto*Y = new double[n];
 
@@ -59,7 +60,7 @@ int main(int argc, char** argv) {
 
     double coordinate_final = A_x*t_end + B_x;
 
-    for (int i = 0; i <= n - 1; i++){
+    for (int i = 0; i <= n - 2; i++){
         if ((coordinate_final >= X[i]) && (coordinate_final <= X[i + 1])){
             answer = i + 1;
         }else if (coordinate_final < X[0]){
