@@ -4,11 +4,11 @@
 
 
 int main(int argc, char** argv) {
-    if (argc == 2){
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
     int n = 0;
+    if (argc == 2){
     std::ifstream in_prev(argv[1]);
     if (in_prev.is_open()){
         in_prev >> y_0;
