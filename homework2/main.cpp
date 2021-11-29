@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
             in_prev >> v_x;
             in_prev >> v_y;
             double t_end = (v_y + sqrt(v_y * v_y + 2 * g * y_0)) / g;
-            while ((!in_prev.eof()) && (check <= v_x * t_end + y_0)) {
+            while ((!in_prev.eof())) {
                 in_prev >> check;
                 in_prev >> tmp;
                 n++;
@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
             in >> v_y;
             int i = 0;
             double t_end = (v_y + sqrt(v_y * v_y + 2 * g * y_0)) / g;
-            while ((!in.eof()) && (X[i - 1] <= v_x * t_end + y_0)) {
+            while ((!in.eof())) {
                 in >> X[i];
                 in >> Y[i];
                 n++;
