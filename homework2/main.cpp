@@ -66,7 +66,6 @@ int main() {
             }
         }
     }
-    std::cout << coordinate_final << std::endl;
     if (coordinate_final >= X[size - 1]){
         answer = size;
     }
