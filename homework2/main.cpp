@@ -52,9 +52,6 @@ int main(int argc, char** argv) {
                 A_x = -A_x;
                 direction = (-1)*direction;
             }
-        }else{
-            break;
-        }
     }
 
     double coordinate_final = A_x*t_end + B_x;
