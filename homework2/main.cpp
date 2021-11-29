@@ -73,4 +73,5 @@ int main(int argc, char** argv) {
     delete[] X;
     delete[] Y;
     std::cout << answer << std::endl;
+    return 0;
 }
