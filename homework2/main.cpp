@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double t_collision;
     int direction = 1;
-    int n = 10000;
+    int n = 1000000;
     int size = 0;
     //std::ifstream in_prev(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
     //if (in_prev.is_open()){
