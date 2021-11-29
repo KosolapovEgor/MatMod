@@ -66,18 +66,18 @@ int main() {
             }
         }
     }
+    std::cout << coordinate_final << std::endl;
+    if (coordinate_final >= X[size - 1]){
+        answer = size;
+    }
+    
+    if (coordinate_final <= X[0]){
+        answer = 0;
+    }
 
     for (int i = 0; i <= size - 1; i++){
-        if (coordinate_final <= X[0]){
-            answer = 0;
-            break;
-        }
-        if (coordinate_final >= X[size - 1]){
-            answer = size;
-            break;
-        }
         if (coordinate_final >= X[i] && coordinate_final <= X[i + 1]){
-            answer = i ;
+            answer = i + 1;
             break;
         }
     }
