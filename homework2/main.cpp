@@ -44,24 +44,23 @@ int main(int argc, char** argv) {
     double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
 
     for (int i = 0; (i >= 0) && (i <= n - 1); i = i + direction){
+        std::cout << i << std::endl;
         t_collision = (X[i] - B_x)/A_x;
         if (t_collision <= t_end) {
-            if ((-g * t_collision * t_collision / 2 + A_y * t_collision + B_y) <= Y[i]) {
+            if ((-g * t_collision * t_collision/2 + A_y * t_collision + B_y) <= Y[i]) {
                 B_x = 2*A_x*t_collision + B_x;
                 A_x = -A_x;
                 direction = (-1)*direction;
             }
+        }else{
+            break;
         }
     }
 
     double coordinate_final = A_x*t_end + B_x;
 
     for (int i = 0; i <= n - 1; i++){
-        if ((coordinate_final > X[i]) && (coordinate_final < X[i + 1])){
-            answer = i + 1;
-        }else if((coordinate_final == X[i]) && direction == 1){
-            answer = i;
-        }else if((coordinate_final == X[i]) && direction == -1){
+        if ((coordinate_final >= X[i]) && (coordinate_final <= X[i + 1])){
             answer = i + 1;
         }else if (coordinate_final < X[0]){
             answer = 0;
