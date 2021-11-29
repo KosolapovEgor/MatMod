@@ -7,10 +7,10 @@ int main(int argc, char** argv) {
     if (argc != 2) {std::cout << "There aren't any arguments or there are more arguments than we expect."; }
     else{
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
-    double t_collision;
+    double check, tmp, t_collision;
     int direction = 1;
     int n = 0;
-    std::ifstream in_prev(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
+    std::ifstream in_prev(argv[1]);
     if (in_prev.is_open()){
         in_prev >> y_0;
         in_prev >> v_x;
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     double A_x = v_x, A_y = v_y, B_x = 0, B_y = y_0;
     double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
 
-    for (int i = 0; (i >= 0) && (i <= size - 1); i = i + direction){
+    for (int i = 0; (i >= 0) && (i <= n - 1); i = i + direction){
         t_collision = (X[i] - B_x)/A_x;
         if (t_collision <= t_end) {
             if ((-g * t_collision * t_collision / 2 + A_y * t_collision + B_y) <= Y[i]) {
@@ -74,7 +74,7 @@ int main(int argc, char** argv) {
 
     delete[] X;
     delete[] Y;
-        
+
     std::cout << answer << std::endl;
 
 }
