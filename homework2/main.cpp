@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 
     double coordinate_final = A_x*t_end + B_x;
 
-    for (int i = 0; i <= n - 2; i++){
+    for (int i = 0; i <= n - 1; i++){
         if ((coordinate_final >= X[i]) && (coordinate_final <= X[i + 1])){
             answer = i + 1;
         }else if (coordinate_final < X[0]){
