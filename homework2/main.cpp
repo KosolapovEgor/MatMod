@@ -23,7 +23,6 @@ int main(int argc, char** argv) {
         }
     }
     in_prev.close();
-    std::cout << n << std::endl;
     auto*X = new double[n];
     auto*Y = new double[n];
 
