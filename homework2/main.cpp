@@ -4,12 +4,18 @@
 
 
 int main(int argc, char** argv) {
+    if(argc == 2){
+        // есть один агрумент
+        // в argv[1] содержится строка с первым агрументом (имя файла)
+        std::cout << "1st argument: "<< argv[1] << std::endl;
+    }else{
+        // аргументов нет или их больше чем мы ожидаем
+    }
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
     int n = 0;
-    if (argc == 2){
-    std::ifstream in_prev(argv[1]);
+    std::ifstream in_prev(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
     if (in_prev.is_open()){
         in_prev >> y_0;
         in_prev >> v_x;
@@ -26,7 +32,7 @@ int main(int argc, char** argv) {
     auto*X = new double[n];
     auto*Y = new double[n];
 
-    std::ifstream in(argv[1]);
+    std::ifstream in(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
     if (in.is_open()){
         in >> y_0;
         in >> v_x;
@@ -40,11 +46,6 @@ int main(int argc, char** argv) {
         }
     }
     in.close();
-    std::cout << "1st argument: "<< argv[1] << std::endl;
-    }
-    else{ 
-        //аргументов нет или их больше чем мы ожидаем
-    }
 
     double A_x = v_x, A_y = v_y, B_x = 0, B_y = y_0;
     double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
@@ -61,9 +62,10 @@ int main(int argc, char** argv) {
     }
 
     double coordinate_final = A_x*t_end + B_x;
+    std::cout << coordinate_final << std::endl;
 
     for (int i = 0; i <= n - 1; i++){
-        if ((coordinate_final > X[i]) && (coordinate_final < X[i + 1])) {
+        if ((coordinate_final > X[i]) && (coordinate_final < X[i + 1])){
             answer = i + 1;
         }else if((coordinate_final == X[i]) && direction == 1){
             answer = i;
@@ -78,7 +80,7 @@ int main(int argc, char** argv) {
 
     delete[] X;
     delete[] Y;
+
     std::cout << answer << std::endl;
 
-}
 }
