@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
     double check, tmp, t_collision;
     int direction = 1;
     int n = 0;
-    std::ifstream in_prev("in.txt");
+    std::ifstream in_prev(argv[1]);
     if (in_prev.is_open()){
         in_prev >> y_0;
         in_prev >> v_x;
@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     auto*X = new double[n];
     auto*Y = new double[n];
 
-    std::ifstream in("in.txt");
+    std::ifstream in(argv[1]);
     if (in.is_open()){
         in >> y_0;
         in >> v_x;
