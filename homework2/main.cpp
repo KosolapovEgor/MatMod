@@ -7,20 +7,8 @@ int main(int argc, char** argv) {
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
-    int n = 0;
-    std::ifstream in_prev(argv[1]);
-    if (in_prev.is_open()){
-        in_prev >> y_0;
-        in_prev >> v_x;
-        in_prev >> v_y;
-        double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
-        while ((!in_prev.eof()) && (check <= v_x*t_end)) {
-            in_prev >> check;
-            in_prev >> tmp;
-            n++;
-        }
-    }
-    in_prev.close();
+    int n = 10000;
+
     auto*X = new double[n];
     auto*Y = new double[n];
 
