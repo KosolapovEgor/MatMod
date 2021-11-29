@@ -61,9 +61,9 @@ int main(int argc, char** argv) {
     for (int i = 0; i <= n - 1; i++){
         if ((coordinate_final >= X[i]) && (coordinate_final <= X[i + 1])){
             answer = i + 1;
-        }else if (coordinate_final <= X[0]){
+        }else if (coordinate_final < X[0]){
             answer = 0;
-        }else if (coordinate_final >= X[n - 1]){
+        }else if (coordinate_final > X[n - 1]){
             answer = n;
         }
     }
