@@ -66,7 +66,6 @@ int main() {
             }
         }
     }
-    std::cout << coordinate_final << std::endl;
 
     for (int i = 0; i <= size - 1; i++){
         if (coordinate_final <= X[0]){
