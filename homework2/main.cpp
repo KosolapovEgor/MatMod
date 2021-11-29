@@ -45,7 +45,6 @@ int main(int argc, char** argv) {
     double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
 
     for (int i = 0; (i >= 0) && (i <= n - 1); i = i + direction){
-        std::cout << i << std::endl;
         t_collision = (X[i] - B_x)/A_x;
         if (t_collision <= t_end) {
             if ((-g * t_collision * t_collision/2 + A_y * t_collision + B_y) <= Y[i]) {
