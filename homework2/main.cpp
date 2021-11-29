@@ -76,12 +76,14 @@ int main(int argc, char** argv) {
             answer = 0;
         }
 
+    if ((coordinate_final > X[0]) && (coordinate_final < X[size - 1])){
         for (int i = 0; i <= size - 1; i++) {
             if (coordinate_final >= X[i] && coordinate_final <= X[i + 1]) {
                 answer = i + 1;
                 break;
             }
         }
+    }
         delete[] X;
         delete[] Y;
         std::cout << answer << std::endl;
