@@ -4,14 +4,6 @@
 
 
 int main(int argc, char** argv) {
-    if(argc == 2){
-        // есть один агрумент
-        // в argv[1] содержится строка с первым агрументом (имя файла)
-        std::cout << "1st argument: "<< argv[1] << std::endl;
-    }else{
-        // аргументов нет или их больше чем мы ожидаем
-    }
-        // остальной код программы
     double x_0 = 0, y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     int size = 0;
     double check, tmp;
