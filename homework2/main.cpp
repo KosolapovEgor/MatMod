@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
     auto*X = new double[n];
     auto*Y = new double[n];
 
-    std::ifstream in(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
+    std::ifstream in(argv[1]);
     if (in.is_open()){
         in >> y_0;
         in >> v_x;
