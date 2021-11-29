@@ -4,8 +4,7 @@
 
 
 int main(int argc, char** argv) {
-    if (argc != 2) {std::cout << "There aren't any arguments or there are more arguments than we expect."; }
-    else{
+    if (argc == 2){
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
@@ -41,6 +40,10 @@ int main(int argc, char** argv) {
         }
     }
     in.close();
+    }
+    else{ 
+        //аргументов нет или их больше чем мы ожидаем
+    }
 
     double A_x = v_x, A_y = v_y, B_x = 0, B_y = y_0;
     double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
@@ -74,7 +77,6 @@ int main(int argc, char** argv) {
 
     delete[] X;
     delete[] Y;
-
     std::cout << answer << std::endl;
 
 }
