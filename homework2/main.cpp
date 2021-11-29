@@ -4,12 +4,13 @@
 
 
 int main(int argc, char** argv) {
-    if (argc == 2){
+    if (argc != 2) {std::cout << "There aren't any arguments or there are more arguments than we expect."; }
+    else{
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
     int n = 0;
-    std::ifstream in_prev(argv[1]);
+    std::ifstream in_prev(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
     if (in_prev.is_open()){
         in_prev >> y_0;
         in_prev >> v_x;
@@ -26,7 +27,7 @@ int main(int argc, char** argv) {
     auto*X = new double[n];
     auto*Y = new double[n];
 
-    std::ifstream in(argv[1]);
+    std::ifstream in(R"(C:\Users\Thomas_Maddison\CLionProjects\Homework2\in.txt)");
     if (in.is_open()){
         in >> y_0;
         in >> v_x;
@@ -52,11 +53,14 @@ int main(int argc, char** argv) {
                 A_x = -A_x;
                 direction = (-1)*direction;
             }
+        }else{
+            break;
+        }
     }
 
     double coordinate_final = A_x*t_end + B_x;
 
-    for (int i = 0; i <= n - 1; i++){
+    for (int i = 0; i <= n - 2; i++){
         if ((coordinate_final >= X[i]) && (coordinate_final <= X[i + 1])){
             answer = i + 1;
         }else if (coordinate_final < X[0]){
