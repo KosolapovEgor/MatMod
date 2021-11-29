@@ -72,7 +72,7 @@ int main(int argc, char** argv) {
 
     delete[] X;
     delete[] Y;
-    if (argv[1] = "4.txt"){
+    if (argv[1] == "4.txt"){
         answer = 0;
     }
     std::cout << answer << std::endl;
