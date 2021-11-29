@@ -3,7 +3,7 @@
 #include <fstream>
 
 
-int main(int argc, char** argv) {
+int main() {
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
     int direction = 1;
