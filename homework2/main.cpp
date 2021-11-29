@@ -40,6 +40,7 @@ int main(int argc, char** argv) {
         }
     }
     in.close();
+    std::cout << "1st argument: "<< argv[1] << std::endl;
     }
     else{ 
         //аргументов нет или их больше чем мы ожидаем
