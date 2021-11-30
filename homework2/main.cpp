@@ -18,9 +18,9 @@ int main(int argc, char** argv) {
         while ((!in_prev.eof()) && (check <= v_x*t_end)) {
             in_prev >> check;
             in_prev >> tmp;
-            if (!in_prev.eof()){
+            //if (!in_prev.eof()){
                 n++;
-            }
+            //}
         }
     }
     in_prev.close();
