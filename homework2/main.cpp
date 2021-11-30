@@ -16,11 +16,9 @@ int main(int argc, char** argv) {
         in_prev >> v_y;
         double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
         while ((!in_prev.eof()) && (check <= v_x*t_end)) {
-            in_prev >> check;
-            in_prev >> tmp;
-            //if (!in_prev.eof()){
+            if (in_prev >> check >> tmp) {
                 n++;
-            //}
+            }
         }
     }
     in_prev.close();
