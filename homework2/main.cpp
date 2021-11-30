@@ -7,7 +7,6 @@ int main(int argc, char** argv) {
 
     double y_0 = 0, v_x = 0, v_y = 0, g = 9.81, answer = 0;
     double check, tmp, t_collision;
-    double x_check;
     int direction = 1;
     int n = 0;
     std::ifstream in_prev(argv[1]);
@@ -16,12 +15,13 @@ int main(int argc, char** argv) {
         in_prev >> v_x;
         in_prev >> v_y;
         double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
-        while ((!in_prev.eof()) && (check <= v_x*t_end) && (check == double(check))) {
+        while ((!in_prev.eof()) && (check <= v_x*t_end)) {
             in_prev >> check;
             in_prev >> tmp;
-            n++;
+            if (!in_prev.eof()){
+                n++;
+            }
         }
-        n = n - 1;
     }
     in_prev.close();
     auto*X = new double[n];
