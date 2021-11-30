@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     double A_x = v_x, A_y = v_y, B_x = 0, B_y = y_0;
     double t_end = (v_y+sqrt(v_y*v_y+2*g*y_0))/g;
 
-    for (int i = 0; (i >= 0) && (i <= n - 1); i = i + direction){
+    for (int i = 0; (i >= 0) && (i <= n - 2); i = i + direction){
         t_collision = (X[i] - B_x)/A_x;
         if (t_collision <= t_end) {
             if ((-g * t_collision * t_collision/2 + A_y * t_collision + B_y) <= Y[i]) {
